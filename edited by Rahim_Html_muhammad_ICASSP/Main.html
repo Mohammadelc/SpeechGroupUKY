@@ -1,0 +1,528 @@
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="generator" content="Hugo 0.66.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
+<link rel="stylesheet" href="../css/normalize.css">
+<link rel="stylesheet" href="../css/skeleton.css">
+<link rel="stylesheet" href="../css/custom.css">
+<link rel="alternate" href="index.xml" type="application/rss+xml" title="Speech Research">
+<link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
+<title>Dysarthria is a motor speech disorder often characterized ...</title>
+</head>
+  <body>
+   <article>
+      <header>
+        <h1>SYNTHESIZING DYSARTHRIC SPEECH USING MULTI-SPEAKER TTS FOR DYSARTHRIC SPEECH RECOGNITION</h1>
+      </header>
+    </article>
+
+
+	<p><b>Paper:</b> <a href="www.google.com">google</a></p>
+    <h4 id="authors">Authors</h4>
+	<ul>
+	<li>Mohammad Soleymanpour (University of Kentucky) <a href="mailto:m.soleymanpour@uky.edu">m.soleymanpour@uky.edu</a></li>
+	<li>Michael T. Johnson1 (University of Kentucky) <a href="mike.johnson@uky.edu">mike.johnson@uky.edu</a></li>
+	<li>Rahim Soleymanpour (University of Connecticut) <a href="mailto:rahim.soleymanpour@uconn.edu">rahim.soleymanpour@uconn.edu</a></li>
+	<li>Jeffrey Berry (Marquette University) <a href="mailto:jeffrey.berry@marquette.edu ">jeffrey.berry@marquette.edu </a></li>
+	</ul>
+	
+
+	<div> <p style="font-size:17px"> <b> Abstract:</b> </br> </br>
+  Dysarthria is a motor speech disorder often characterized by reduced speech intelligibility through slow, uncoordinated control of speech production muscles. Automatic Speech recognition (ASR) systems may help dysarthric talkers communicate more effectively. To have robust dysarthria-specific ASR, sufficient training speech is required, which is not readily available. Recent advances in Text-To-Speech (TTS) synthesis multi-speaker end-to-end TTS systems suggest the possibility of using synthesis for data augmentation. In this paper, we aim to improve multi-speaker end-to-end TTS systems to synthesize dysarthric speech for improved training of a dysarthria-specific DNN-HMM ASR. In the synthesized speech, we add dysarthria severity level and pause insertion mechanisms to other control parameters such as pitch, energy, and duration. Results show that a DNN-HMM model trained on additional synthetic dysarthric speech achieves WER improvement of 12.2% compared to the baseline, the addition of the severity level and pause insertion controls decrease WER by 6.5%, showing the effectiveness of adding these parameters.
+      </p>
+    </div>
+
+     <p>&nbsp;</p>
+
+    <!-- volume control -->
+	 <!-- -------------------------------------------------------------------------------------------------------------------- -->
+
+    <div>
+      <a name="volume"><h2>Dysarthria Severity Level</h2></a>
+
+      <hr>
+		 </br>
+		<td nowrap> <p style="font-size:18px"> <b>Abbreviation:</b> Pitch Control: PC, Energy Control: EC, Duration Control: DC, Dysarthria Severity Contorl: SC </br> </p> </td>
+		 </br></br>
+	     <table>
+        <tbody>
+
+
+        <tr align="center">
+       	  <td align="center"></td>
+          <td style="text-align:center"><img  src="AudioAndSpectogram/DysarthriaSeverityLevel/bad sad dad bat bit  bet pad_PC1.0_EC1.0_DC1.0_SC0.0_M02.png" width="320" height="240"></td>
+		  <td style="text-align:center"><img  src="AudioAndSpectogram/DysarthriaSeverityLevel/bad sad dad bat bit  bet pad_PC1.0_EC1.0_DC1.0_SC1.0_M02.png" width="320" height="240"></td>
+          <td style="text-align:center"><img  src="AudioAndSpectogram/DysarthriaSeverityLevel/bad sad dad bat bit  bet pad_PC1.0_EC1.0_DC1.0_SC2.0_M02.png" width="320" height="240"></td>
+        </tr>
+		
+        <tr  align="center">
+          <td nowrap> <b>Speaker M02:</b> </br>  </td>
+          <td align="center"><audio controls=""><source src="AudioAndSpectogram/DysarthriaSeverityLevel/bad sad dad bat bit  bet pad_PC1.0_EC1.0_DC1.0_SC0.0_M02.wav"></audio></td>
+          <td align="center"><audio controls=""><source src="AudioAndSpectogram/DysarthriaSeverityLevel/bad sad dad bat bit  bet pad_PC1.0_EC1.0_DC1.0_SC1.0_M02.wav"></audio></td>
+          <td align="center"><audio controls=""><source src="AudioAndSpectogram/DysarthriaSeverityLevel/bad sad dad bat bit  bet pad_PC1.0_EC1.0_DC1.0_SC2.0_M02.wav"></audio></td>
+        </tr>
+        <tr align="center">
+         <td align="center"></td>
+          <td align="center">
+            <b>Coeff</b> = [PC: 1.0, EC: 1.0, DC: 1.0, <b>SC: 0.0 </b> ]
+          </td>
+          <td align="center">
+            <b>Coeff</b> = [PC: 1.0, EC: 1.0, DC: 1.0, <b> SC: 1.0 </b>]
+          </td>
+          <td align="center">
+            <b>Coeff</b> = [PC: 1.0, EC: 1.0, DC: 1.0, <b> SC: 2.0 </b>]
+		  </td>
+        </tr>
+
+
+		<tr align="center">
+		<td align="center"></td>
+          <td align="center">
+            <br><br><br>
+			<br><br><br>
+
+
+          </td>
+          <td align="center">
+            <b>Text: </b> "bad sad dad bat bit bet pad"
+            <br><br><br>
+          </td>
+          <td align="center">
+		  
+            <br><br><br>
+          </td>
+         </tr>
+
+
+
+
+        <tr align="center">
+       	  <td align="center"></td>
+          <td align="center"><img src="AudioAndSpectogram/DysarthriaSeverityLevel/bad sad dad bat bit  bet pad_PC1.0_EC1.0_DC1.0_SC0.0_M04.png" width="320" height="240"></td>
+          <td align="center"><img src="AudioAndSpectogram/DysarthriaSeverityLevel/bad sad dad bat bit  bet pad_PC1.0_EC1.0_DC1.0_SC1.0_M04.png" width="320" height="240"></td>
+          <td align="center"><img src="AudioAndSpectogram/DysarthriaSeverityLevel/bad sad dad bat bit  bet pad_PC1.0_EC1.0_DC1.0_SC2.0_M04.png" width="320" height="240"></td>
+        </tr  align="center">
+        <tr align="center">
+          <td nowrap><b>Speaker M04: </b> </br>  </td>
+          <td align="center"><audio controls=""><source src="AudioAndSpectogram/DysarthriaSeverityLevel/bad sad dad bat bit  bet pad_PC1.0_EC1.0_DC1.0_SC0.0_M04.wav"></audio></td>
+          <td align="center"><audio controls=""><source src="AudioAndSpectogram/DysarthriaSeverityLevel/bad sad dad bat bit  bet pad_PC1.0_EC1.0_DC1.0_SC1.0_M04.wav"></audio></td>
+          <td align="center"><audio controls=""><source src="AudioAndSpectogram/DysarthriaSeverityLevel/bad sad dad bat bit  bet pad_PC1.0_EC1.0_DC1.0_SC2.0_M04.wav"></audio></td>
+        </tr>
+        <tr align="center">
+         <td align="center"></td>
+          <td >
+            <b>Coeff</b> = [PC: 1.0, EC: 1.0, DC: 1.0, <b>SC: 0.0 </b>]
+          </td>
+          <td align="center">
+            <b>Coeff</b> = [PC: 1.0, EC: 1.0, DC: 1.0, <b> SC: 1.0 </b>]
+          </td>
+          <td align="center">
+            <b>Coeff</b> = [PC: 1.0, EC: 1.0, DC: 1.0, <b>SC: 2.0 </b>]
+		  </td>
+        </tr>
+
+
+		<tr align="center">
+		<td align="center"></td>
+          <td align="center">
+            <br><br><br>
+			<br><br><br>
+
+          </td>
+          <td align="center">
+            <b>Text: </b> "bad sad dad bat bit bet pad"
+            <br><br><br>
+          </td>
+          <td align="center">
+            <br><br><br>
+          </td>
+         </tr>
+		 
+		 
+		 
+
+
+		<tr align="center">
+       	  <td align="center"></td>
+          <td align="center"><img src="AudioAndSpectogram/DysarthriaSeverityLevel/THIs is the pad_PC1.0_EC1.0_DC1.0_SC0.0_MC02.png" width="320" height="240"></td>
+          <td align="center"><img src="AudioAndSpectogram/DysarthriaSeverityLevel/THIs is the pad_PC1.0_EC1.0_DC1.0_SC1.0_MC02.png" width="320" height="240"></td>
+          <td align="center"><img src="AudioAndSpectogram/DysarthriaSeverityLevel/THIs is the pad_PC1.0_EC1.0_DC1.0_SC2.0_MC02.png" width="320" height="240"></td>
+        </tr>
+        <tr align="center">
+          <td nowrap> <b>Speaker MC02:</b> </br>  </td>
+          <td align="center"><audio controls=""><source src="AudioAndSpectogram/DysarthriaSeverityLevel/THIs is the pad_PC1.0_EC1.0_DC1.0_SC0.0_MC02.wav"></audio></td>
+          <td align="center"><audio controls=""><source src="AudioAndSpectogram/DysarthriaSeverityLevel/THIs is the pad_PC1.0_EC1.0_DC1.0_SC1.0_MC02.wav"></audio></td>
+          <td align="center"><audio controls=""><source src="AudioAndSpectogram/DysarthriaSeverityLevel/THIs is the pad_PC1.0_EC1.0_DC1.0_SC2.0_MC02.wav"></audio></td>
+        </tr>
+        <tr align="center">
+         <td align="center"></td>
+          <td align="center">
+            <b>Coeff</b> = [PC: 1.0, EC: 1.0, DC: 1.0, <b>SC: 0.0</b>]
+          </td>
+          <td align="center">
+            <b>Coeff</b> = [PC: 1.0, EC: 1.0, DC: 1.0, <b>SC: 1.0</b>]
+          </td>
+          <td align="center">
+            <b>Coeff</b> = [PC: 1.0, EC: 1.0, DC: 1.0, <b>SC: 2.0</b>]
+		  </td>
+        </tr>
+
+
+		<tr align="center">
+		<td align="center"></td>
+          <td align="center">
+            <br><br><br>
+			 <br><br><br>
+
+          </td>
+          <td align="center">
+            <b>Text: </b> "This is the pad"
+            <br><br><br>
+          </td>
+          <td align="center">
+            <br><br><br>
+          </td>
+         </tr>
+
+
+
+
+		<tr align="center">
+       	  <td align="center"></td>
+          <td align="center"><img src="AudioAndSpectogram/DysarthriaSeverityLevel/we Like to paly voleyball_PC1.0_EC1.0_DC1.0_SC0.0_MC04.png" width="320" height="240"></td>
+          <td align="center"><img src="AudioAndSpectogram/DysarthriaSeverityLevel/we Like to paly voleyball_PC1.0_EC1.0_DC1.0_SC1.0_MC04.png" width="320" height="240"></td>
+          <td align="center"><img src="AudioAndSpectogram/DysarthriaSeverityLevel/we Like to paly voleyball_PC1.0_EC1.0_DC1.0_SC2.0_MC04.png" width="320" height="240"></td>
+        </tr>
+        <tr align="center">
+          <td nowrap><b>Speaker MC04:</b> </br>  </td>
+          <td align="center"><audio controls=""><source src="AudioAndSpectogram/DysarthriaSeverityLevel/we Like to paly voleyball_PC1.0_EC1.0_DC1.0_SC0.0_MC04.wav"></audio></td>
+          <td align="center"><audio controls=""><source src="AudioAndSpectogram/DysarthriaSeverityLevel/we Like to paly voleyball_PC1.0_EC1.0_DC1.0_SC1.0_MC04.wav"></audio></td>
+          <td align="center"><audio controls=""><source src="AudioAndSpectogram/DysarthriaSeverityLevel/we Like to paly voleyball_PC1.0_EC1.0_DC1.0_SC2.0_MC04.wav"></audio></td>
+        </tr>
+        <tr align="center">
+         <td align="center"></td>
+          <td align="center">
+            <b>Coeff</b> = [PC: 1.0, EC: 1.0, DC: 1.0, <b> SC: 0.0</b>]
+          </td>
+          <td align="center">
+            <b>Coeff</b> = [PC: 1.0, EC: 1.0, DC: 1.0, <b>SC: 1.0</b>]
+          </td>
+          <td align="center">
+            <b>Coeff</b> = [PC: 1.0, EC: 1.0, DC: 1.0, <b>SC: 2.0</b>]
+		  </td>
+        </tr>
+
+
+		<tr align="center">
+		<td align="center"></td>
+          <td align="center">
+            <br><br><br>
+			<br><br><br>
+
+          </td>
+          <td align="center">
+            <b>Text: </b> "We like to play volleyball"
+            <br><br><br>
+          </td>
+          <td align="center">
+            
+          </td>
+         </tr>
+
+         </tbody>
+      </table>
+
+    </div>
+
+	 <!-- --------------------------------------------------------------------------------------------------------------------- -->
+
+	<div>
+      <a name="volume"><h2>Pause Insertion </h2></a>
+
+      <hr>
+
+         </br></br>
+	     <table>
+        <tbody>
+
+
+
+        <tr align="center">
+       	  <td align="center"></td>
+          <td align="center"><img src="AudioAndSpectogram/Pause Insertion/How we can synthesize better dysarthric speech_PN0_PC1.0_EC1.0_DC1.0_SC2.0_M02.png" width="320" height="240"></td>
+          <td align="center"><img src="AudioAndSpectogram/Pause Insertion/How we can synthesize better dysarthric speech_PN1_PC1.0_EC1.0_DC1.0_SC2.0_M02.png" width="320" height="240"></td>
+          <td align="center"><img src="AudioAndSpectogram/Pause Insertion/How we can synthesize better dysarthric speech_PN2_PC1.0_EC1.0_DC1.0_SC2.0_M02.png" width="320" height="240"></td>
+        </tr>
+        <tr align="center">
+          <td nowrap><b>Speaker M02:</b> </br>  </td>
+          <td align="center"><audio controls=""><source src="AudioAndSpectogram/Pause Insertion/How we can synthesize better dysarthric speech_PN0_PC1.0_EC1.0_DC1.0_SC2.0_M02.wav"></audio></td>
+          <td align="center"><audio controls=""><source src="AudioAndSpectogram/Pause Insertion/How we can synthesize better dysarthric speech_PN1_PC1.0_EC1.0_DC1.0_SC2.0_M02.wav"></audio></td>
+          <td align="center"><audio controls=""><source src="AudioAndSpectogram/Pause Insertion/How we can synthesize better dysarthric speech_PN2_PC1.0_EC1.0_DC1.0_SC2.0_M02.wav"></audio></td>
+        </tr>
+         <td align="center"></td>
+          <td align="center">
+            <b>Number of pause</b> = None
+          </td>
+          <td align="center">
+            <b>Number of pause</b> = 1
+          </td>
+          <td align="center">
+            <b>Number of pause</b> = 2
+		  </td>
+        </tr>
+
+
+
+		<td align="center"></td>
+          <td align="center">
+            <br><br><br>
+			<br><br><br>
+          </td>
+          <td align="center">
+            <b>Text: </b> "How we can synthesize better dysarthric speech?"
+            <br><br><br>
+          </td>
+          <td align="center">
+            <br><br><br>
+          </td>
+        </tr>
+
+        <tr align="center">
+       	  <td align="center"></td>
+          <td align="center"><img src="AudioAndSpectogram/Pause Insertion/How we can synthesize better dysarthric speech_PN0_PC1.0_EC1.0_DC1.0_SC2.0_M05.png" width="320" height="240"></td>
+          <td align="center"><img src="AudioAndSpectogram/Pause Insertion/How we can synthesize better dysarthric speech_PN1_PC1.0_EC1.0_DC1.0_SC2.0_M05.png" width="320" height="240"></td>
+          <td align="center"><img src="AudioAndSpectogram/Pause Insertion/How we can synthesize better dysarthric speech_PN2_PC1.0_EC1.0_DC1.0_SC2.0_M05.png" width="320" height="240"></td>
+        </tr>
+        <tr align="center">
+          <td nowrap><b>Speaker M05:</b> </br>  </td>
+          <td align="center"><audio controls=""><source src="AudioAndSpectogram/Pause Insertion/How we can synthesize better dysarthric speech_PN0_PC1.0_EC1.0_DC1.0_SC2.0_M05.wav"></audio></td>
+          <td align="center"><audio controls=""><source src="AudioAndSpectogram/Pause Insertion/How we can synthesize better dysarthric speech_PN1_PC1.0_EC1.0_DC1.0_SC2.0_M05.wav"></audio></td>
+          <td align="center"><audio controls=""><source src="AudioAndSpectogram/Pause Insertion/How we can synthesize better dysarthric speech_PN2_PC1.0_EC1.0_DC1.0_SC2.0_M05.wav"></audio></td>
+        </tr>
+         <td align="center"></td>
+          <tr align="center">
+            <b>Number of pause</b> = None
+          </td>
+          <td align="center">
+            <b>Number of pause</b> = 1
+          </td>
+          <td align="center">
+            <b>Number of pause</b> = 2
+		  </td>
+        </tr>
+
+
+
+		<td align="center"></td>
+          <td align="center">
+		  <br><br><br>
+		  <br><br><br>
+          </td>
+          <td align="center">
+            <b>Text: </b> "How we can synthesize better dysarthric speech?"
+          </td>
+          <td align="center">
+          </td>
+        </tr>
+         </tbody>
+      </table>
+
+    </div>
+
+
+	 <!-- ------------------ -->
+
+
+	<div>
+      <a name="volume"><h2>Duration, Pitch and Duration controls on a fixed severity level</h2></a>
+
+      <hr>
+
+        </br></br>
+
+	    <table>
+        <tbody>
+
+
+
+        <tr align="center">
+       	  <td align="center"></td>
+          <td align="center"><img src="AudioAndSpectogram/DurationEnergyPitch/bad and good_PC1.0_EC1.0_DC1.0_SC2.0_M05.png" width="320" height="200"></td>
+          <td align="center"><img src="AudioAndSpectogram/DurationEnergyPitch/bad and good_PC1.0_EC1.0_DC1.2_SC2.0_M05.png" width="320" height="200"></td>
+          <td align="center"><img src="AudioAndSpectogram/DurationEnergyPitch/bad and good_PC1.0_EC1.0_DC1.4_SC2.0_M05.png" width="320" height="200"></td>
+        </tr>
+        <tr align="center">
+          <td nowrap> <b>Duration(Speaker M05):</b>  </br>  </td>
+          <td align="center"><audio controls=""><source src="AudioAndSpectogram/DurationEnergyPitch/bad and good_PC1.0_EC1.0_DC1.0_SC2.0_M05.wav"></audio></td>
+          <td align="center"><audio controls=""><source src="AudioAndSpectogram/DurationEnergyPitch/bad and good_PC1.0_EC1.0_DC1.2_SC2.0_M05.wav"></audio></td>
+          <td align="center"><audio controls=""><source src="AudioAndSpectogram/DurationEnergyPitch/bad and good_PC1.0_EC1.0_DC1.4_SC2.0_M05.wav"></audio></td>
+		</tr>
+         <td align="center"></td>
+          <td align="center">
+            <b>Coeff</b> = [PC: 1.0, EC: 1.0, <b>DC: 1.0</b>, SC: 2.0]
+          </td>
+          <td align="center">
+            <b>Coeff</b> = [PC: 1.0, EC: 1.0, <b>DC: 1.3</b>, SC: 2.0]
+          </td>
+          <td align="center">
+            <b>Coeff</b> = [PC: 1.0, EC: 1.0, <b>DC: 1.6</b>, SC: 2.0]
+		  </td>
+        </tr>
+
+		<td align="center"></td>
+          <td align="center">
+            <br><br><br>
+			<br><br><br>
+          </td>
+          <td align="center">
+            <b>Text: </b> "Bad and good"
+            <br><br><br>
+          </td>
+          <td align="center">
+            <br><br><br>
+          </td>
+
+        </tr>
+		
+        <tr align="center">
+       	  <td align="center"></td>
+          <td align="center"><img src="AudioAndSpectogram/DurationEnergyPitch/bad and good_PC1.0_EC0.5_DC1.0_SC2.0_M05.png" width="320" height="200"></td>
+          <td align="center"><img src="AudioAndSpectogram/DurationEnergyPitch/bad and good_PC1.0_EC1.0_DC1.0_SC2.0_M05.png" width="320" height="200"></td>
+          <td align="center"><img src="AudioAndSpectogram/DurationEnergyPitch/bad and good_PC1.0_EC2.0_DC1.0_SC2.0_M05.png" width="320" height="200"></td>
+        </tr>
+        <tr align="center">
+          <td nowrap><b>Energy(Speaker M05):</b> </br>  </td>
+          <td align="center"><audio controls=""><source src="AudioAndSpectogram/DurationEnergyPitch/bad and good_PC1.0_EC0.5_DC1.0_SC2.0_M05.wav"></audio></td>
+          <td align="center"><audio controls=""><source src="AudioAndSpectogram/DurationEnergyPitch/bad and good_PC1.0_EC1.0_DC1.0_SC2.0_M05.wav"></audio></td>
+          <td align="center"><audio controls=""><source src="AudioAndSpectogram/DurationEnergyPitch/bad and good_PC1.0_EC2.0_DC1.0_SC2.0_M05.wav"></audio></td>
+		</tr>
+         <td align="center"></td>
+          <td align="center">
+            <b>Coeff</b> = [PC: 1.0, <b>EC: 0.5</b>, DC: 1.0, SC: 2.0]
+          </td>
+          <td align="center">
+            <b>Coeff</b> = [PC: 1.0, <b>EC: 1.0</b>, DC: 1.0, SC: 2.0]
+          </td>
+          <td align="center">
+            <b>Coeff</b> = [PC: 1.0, <b>EC: 2.0</b>, DC: 1.0, SC: 2.0]
+		  </td>
+        </tr>
+
+
+
+		<td align="center"></td>
+          <td align="center">
+            <br><br><br>
+			<br><br><br>
+
+          </td>
+          <td align="center">
+            <b>Text: </b> "Bad and good"
+            <br><br><br>
+          </td>
+          <td align="center">
+            <br><br><br>
+          </td>
+
+        </tr>
+
+
+
+        <tr align="center">
+       	  <td align="center"></td>
+          <td align="center"><img src="AudioAndSpectogram/DurationEnergyPitch/bad and good_PC0.5_EC1.0_DC1.0_SC2.0_M05.png" width="320" height="200"></td>
+          <td align="center"><img src="AudioAndSpectogram/DurationEnergyPitch/bad and good_PC1.0_EC1.0_DC1.0_SC2.0_M05.png" width="320" height="200"></td>
+          <td align="center"><img src="AudioAndSpectogram/DurationEnergyPitch/bad and good_PC1.5_EC1.0_DC1.0_SC2.0_M05.png" width="320" height="200"></td>
+        </tr>
+        <tr align="center">
+          <td nowrap><b>Pitch(Speaker 05):</b> </br>  </td>
+          <td align="center"><audio controls=""><source src="AudioAndSpectogram/DurationEnergyPitch/bad and good_PC0.5_EC1.0_DC1.0_SC2.0_M05.wav"></audio></td>
+          <td align="center"><audio controls=""><source src="AudioAndSpectogram/DurationEnergyPitch/bad and good_PC1.0_EC1.0_DC1.0_SC2.0_M05.wav"></audio></td>
+          <td align="center"><audio controls=""><source src="AudioAndSpectogram/DurationEnergyPitch/bad and good_PC1.5_EC1.0_DC1.0_SC2.0_M05.wav"></audio></td>
+		</tr>
+         <td align="center"></td>
+          <td align="center">
+            <b>Coeff</b> = [<b>PC: 0.5</b>, EC: 1.0, DC: 1.0, SC: 2.0]
+          </td>
+          <td align="center">
+            <b>Coeff</b> = [<b>PC: 1.0</b>, EC: 1.0, DC: 1.0, SC: 2.0]
+          </td>
+          <td align="center">
+            <b>Coeff</b> = [<b>PC: 2.0</b>, EC: 1.0, DC: 1.0, SC: 2.0]
+		  </td>
+        </tr>
+
+
+
+		<td align="center"></td>
+          <td align="center">
+            <br><br><br>
+			<br><br><br>
+
+          </td>
+          <td align="center">
+            <b>Text: </b> "Bad and good"
+            <br><br><br>
+          </td>
+          <td align="center">
+            <br><br><br>
+          </td>
+
+        </tr>
+
+     
+
+         </tbody>
+      </table>
+
+
+    </div>
+
+
+
+ <!-- ------------------ -->
+
+
+	<div>
+      <a name="volume"><h2>Other Observation</h2></a>
+      <hr>
+
+        </br>
+
+	    <table>
+        <tbody>
+			<p>We have noticed that the following synthesized speech includes a stutter and Speaker M05 repeats phoneme /b/ before <em>"best"</em> that might be one of the characteristics of dysarthric speech.</p>
+       	  <td align="center"></td>
+          <td align="center"><img src="AudioAndSpectogram/OtherObservations/he is one of the best basketball player_PC1.0_EC1.0_DC1.0_SC2.0_M05.png" width="640" height="480"></td>
+        <tr>
+          <td ><b>Speaker M05:</b></br></td>
+          <td align="center"><audio controls=""><source src="AudioAndSpectogram/OtherObservations/he is one of the best basketball player_PC1.0_EC1.0_DC1.0_SC2.0_M05.wav"></audio></td>
+        </tr>
+        <tr align="center">
+         <td align="center"></td>
+          <td align="center">
+		  </br>  
+		  <b>Coeff</b> = [PC: 1.0, EC: 1.0, DC: 1.0, SC: 2.0]
+        </td> 
+        </tr>
+		<tr align="center">
+		<td align="center"></td>
+          <td align="center">
+            <b>Text: </b> "He is one of the best basketball players"
+          </td>    
+         </tr>   
+
+         </tbody>
+      </table>
+
+      <p>&nbsp;</p>
+
+    </div>
+
+
+
+
+  </body></html>
